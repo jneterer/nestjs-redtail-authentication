@@ -1,6 +1,7 @@
 import { Injectable, NestMiddleware, Req, Res } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-import { IJwtInvalid, IJwtUserVerification } from 'src/interfaces';
+import { Response } from 'express';
+import { IJwtInvalid, IJwtUserVerification } from '../interfaces';
 
 @Injectable()
 export class RedtailAuthenticationMiddleware implements NestMiddleware {

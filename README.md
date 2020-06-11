@@ -10,8 +10,8 @@ Import into your app.module.ts and register
 imports: [
   ...
   RedtailAuthenticationModule.register({
-    REDTAIL_BASE_URL: process.env.REDTAIL_BASE_URL 'https://redtailapiurl.com/api/v1',
-    REDTAIL_API_KEY: process.env.REDTAIL_API_KEY 'your_api_key',
+    REDTAIL_BASE_URL: process.env.REDTAIL_BASE_URL || 'https://redtailapiurl.com/api/v1',
+    REDTAIL_API_KEY: process.env.REDTAIL_API_KEY || 'your_api_key',
     JWT_SECRET: process.env.JWT_SECRET || 'my_secret',
     JWT_ACCESS_TOKEN_EXPIRES: process.env.JWT_ACCESS_TOKEN_EXPIRES || '15m',
     JWT_REFRESH_TOKEN_EXPIRES: process.env.JWT_REFRESH_TOKEN_EXPIRES || '30m'

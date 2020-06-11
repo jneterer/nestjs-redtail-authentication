@@ -4,8 +4,8 @@ import { AxiosError } from 'axios';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { IAuthKeys, IAuthResponse, IResponse } from '../interfaces';
-import { UtilsService } from './utils.service';
 import { MODULE_CONFIG, RedtailAuthenticationConfig } from './config';
+import { UtilsService } from './utils.service';
 
 /**
  * Useful service
