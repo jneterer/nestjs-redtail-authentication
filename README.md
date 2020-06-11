@@ -1,40 +1,32 @@
-<h1 align="center"></h1>
-
-<div align="center">
-  <a href="http://nestjs.com/" target="_blank">
-    <img src="https://nestjs.com/img/logo_text.svg" width="150" alt="Nest Logo" />
-  </a>
-</div>
-
-<h3 align="center">NestJS npm Package Starter</h3>
-
-<div align="center">
-  <a href="https://nestjs.com" target="_blank">
-    <img src="https://img.shields.io/badge/built%20with-NestJs-red.svg" alt="Built with NestJS">
-  </a>
-</div>
-
 ### Installation
 
-1. Clone the repo
-2. Run npm/yarn install
+```
+npm install nestjs-redtail-authentication
+```
 
-```bash
-cd nestjs-redtail-auth
-npm install
+Import into your app.module.ts and register
+
+```
+imports: [
+  ...
+  RedtailAuthenticationModule.register({
+    REDTAIL_BASE_URL: process.env.REDTAIL_BASE_URL 'https://redtailapiurl.com/api/v1',
+    REDTAIL_API_KEY: process.env.REDTAIL_API_KEY 'your_api_key',
+    JWT_SECRET: process.env.JWT_SECRET || 'my_secret',
+    JWT_ACCESS_TOKEN_EXPIRES: process.env.JWT_ACCESS_TOKEN_EXPIRES || '15m',
+    JWT_REFRESH_TOKEN_EXPIRES: process.env.JWT_REFRESH_TOKEN_EXPIRES || '30m'
+  }),
+  ...
+]
 ```
 
 ## Change Log
 
 See [Changelog](CHANGELOG.md) for more information.
 
-## Contributing
-
-Contributions welcome! See [Contributing](CONTRIBUTING.md).
-
 ## Author
 
-**John Biundo (Y Prospect on [Discord](https://discord.gg/G7Qnnhy))**
+Jacob Neterer - [my website](https://jacobneterer.com)
 
 ## License
 

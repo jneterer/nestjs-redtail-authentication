@@ -29,9 +29,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nestjsplus/nestjs-redtail-auth"
+    "url": "https://github.com/jneterer/nestjs-redtail-authentication"
   },
-  "bugs": "https://github.com/nestjsplus/nestjs-redtail-auth",
+  "bugs": "https://github.com/jneterer/nestjs-redtail-authentication",
   "peerDependencies": {
     "@nestjs/common": "^6.0.0"
   },
