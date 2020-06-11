@@ -8,3 +8,6 @@ RELEASE 1.0.1
 RELEASE 1.0.2
 * Updating imports
 * Updating README.md
+
+RELEASE 1.0.3
+* Exporting utils service to redtail-authentication/index.ts
