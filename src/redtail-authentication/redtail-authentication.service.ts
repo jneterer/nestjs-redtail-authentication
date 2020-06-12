@@ -1,4 +1,4 @@
-import { HttpService, Inject, Injectable, Req } from '@nestjs/common';
+import { HttpService, Inject, Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { AxiosError } from 'axios';
 import { Observable, of } from 'rxjs';
@@ -60,11 +60,11 @@ export class RedtailAuthenticationService {
 
   /**
    * Determines if the user is authenticated.
-   * @param {Req} req 
+   * @param {IAuthKeys} cookies 
    * @returns {Observable<IResponse>}
    */
-  authenticated(@Req() req): Observable<IResponse> {
-    return <Observable<IResponse>>this.httpService.get(`${this.config.REDTAIL_BASE_URL}/authentication`, this.utilsService.getHeaders(req))
+  authenticated(cookies: IAuthKeys): Observable<IResponse> {
+    return <Observable<IResponse>>this.httpService.get(`${this.config.REDTAIL_BASE_URL}/authentication`, this.utilsService.getHeaders(cookies))
     .pipe(
       map((response: IAuthResponse) => {
         return {

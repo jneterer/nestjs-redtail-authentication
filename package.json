@@ -1,6 +1,6 @@
 {
   "name": "nestjs-redtail-authentication",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A NestJS package for Redtail authentication.",
   "author": "Jacob Neterer @jneterer",
   "license": "MIT",

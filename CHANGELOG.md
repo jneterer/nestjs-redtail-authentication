@@ -18,3 +18,6 @@ RELEASE 1.0.4
 RELEASE 1.0.5
 * Adding redtail http interceptor
 * Fixing authenticated request to pass cookies to get headers
+
+RELEASE 1.0.6
+* Fixing call to authentication by passing cookies instead of the entire request
