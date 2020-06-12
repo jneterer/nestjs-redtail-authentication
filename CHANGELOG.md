@@ -14,3 +14,7 @@ RELEASE 1.0.3
 
 RELEASE 1.0.4
 * Updating utils getHeaders to accept cookies instead of the request in order to prevent circular references
+
+RELEASE 1.0.5
+* Adding redtail http interceptor
+* Fixing authenticated request to pass cookies to get headers

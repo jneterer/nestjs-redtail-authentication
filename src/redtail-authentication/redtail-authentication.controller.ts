@@ -1,9 +1,11 @@
-import { Body, Controller, Get, Post, Req, Res } from '@nestjs/common';
+import { Body, Controller, Get, Post, Req, Res, UseInterceptors } from '@nestjs/common';
 import { first } from 'rxjs/operators';
 import { LoginDto } from '../classes';
 import { RedtailAuthenticationService } from './redtail-authentication.service';
+import { RedtailHttpInterceptor } from './redtail-http-interceptor.interceptor';
 
 @Controller('auth')
+@UseInterceptors(RedtailHttpInterceptor)
 export class RedtailAuthenticationController {
 
   constructor(private authService: RedtailAuthenticationService) {}
@@ -43,7 +45,7 @@ export class RedtailAuthenticationController {
 
   @Get('authenticated')
   authenticated(@Req() req) {
-    return this.authService.authenticated(req);
+    return this.authService.authenticated(req.cookies);
   }
 
 }
