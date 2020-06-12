@@ -11,3 +11,6 @@ RELEASE 1.0.2
 
 RELEASE 1.0.3
 * Exporting utils service to redtail-authentication/index.ts
+
+RELEASE 1.0.4
+* Updating utils getHeaders to accept cookies instead of the request in order to prevent circular references

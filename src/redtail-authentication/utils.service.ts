@@ -1,7 +1,7 @@
-import { Inject, Injectable, Req } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { AxiosRequestConfig } from 'axios';
-import { IJwtUserVerification } from '../interfaces';
+import { IAuthKeys, IJwtUserVerification } from '../interfaces';
 import { MODULE_CONFIG, RedtailAuthenticationConfig } from './config';
 
 @Injectable()
@@ -10,9 +10,14 @@ export class UtilsService {
   constructor(@Inject(MODULE_CONFIG) private config: RedtailAuthenticationConfig,
               private jwtService: JwtService) {}
 
-  getHeaders(@Req() req): AxiosRequestConfig {
+  /**
+   * Creates the headers for the redtail request given the cookies.
+   * @param {IAuthKeys} cookies 
+   * @returns {AxiosRequestConfig}
+   */
+  getHeaders(cookies: IAuthKeys): AxiosRequestConfig {
     // DECODE JWT
-    const access_token: string = req.cookies.access_token;
+    const access_token: string = cookies.access_token;
     const decoded_access_token: IJwtUserVerification = <IJwtUserVerification>this.jwtService.decode(access_token);
     return <AxiosRequestConfig>{
       headers: {
