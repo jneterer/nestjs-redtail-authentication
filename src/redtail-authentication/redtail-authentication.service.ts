@@ -1,7 +1,7 @@
-import { HttpService, Inject, Injectable } from '@nestjs/common';
+import { HttpService, Inject, Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { AxiosError } from 'axios';
-import { Observable, of } from 'rxjs';
+import { Observable, of, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { IAuthKeys, IAuthResponse, IResponse } from '../interfaces';
 import { MODULE_CONFIG, RedtailAuthenticationConfig } from './config';
@@ -73,10 +73,7 @@ export class RedtailAuthenticationService {
         }
       }),
       catchError((error: AxiosError) => {
-      return of({
-        statusCode: error.response.status,
-        message: error.response.statusText
-      });
+        return throwError(new UnauthorizedException(error.response.statusText));
     }));
   }
 

@@ -19,12 +19,12 @@ export class UtilsService {
     // DECODE JWT
     const access_token: string = cookies.access_token;
     const decoded_access_token: IJwtUserVerification = <IJwtUserVerification>this.jwtService.decode(access_token);
-    return <AxiosRequestConfig>{
+    return decoded_access_token ? <AxiosRequestConfig>{
       headers: {
         Authorization: `Userkeyauth ${this.getBase64(`${this.config.REDTAIL_API_KEY}:${decoded_access_token.sub}`)}`,
         ['Content-Type']: 'application/json'
       }
-    };
+    } : null;
   }
 
   /**

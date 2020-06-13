@@ -21,3 +21,10 @@ RELEASE 1.0.5
 
 RELEASE 1.0.6
 * Fixing call to authentication by passing cookies instead of the entire request
+
+RELEASE 1.0.7
+* Checking that the access token exists before creating the headers
+* Adding 401 unauthorized exception to the redtail http interceptor
+* Sanitizing responses from Redtail to remove sensitive information
+* Throw an unauthorized exception for the /authenticated endpoint
+* Removing the http interceptor from the redtail-authentication.service since it is not applicable here
