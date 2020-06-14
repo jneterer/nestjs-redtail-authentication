@@ -28,3 +28,6 @@ RELEASE 1.0.7
 * Sanitizing responses from Redtail to remove sensitive information
 * Throw an unauthorized exception for the /authenticated endpoint
 * Removing the http interceptor from the redtail-authentication.service since it is not applicable here
+
+RELEASE 1.0.8
+* Adding error support for class-validation errors. `class-validation` returns an error object different than an axios error, so we are extending the axios error to include support forthe `class-validation` error object
