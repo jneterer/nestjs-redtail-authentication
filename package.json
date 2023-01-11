@@ -38,7 +38,7 @@
   "dependencies": {
     "@nestjs/jwt": "^7.0.0",
     "class-transformer": "^0.2.3",
-    "class-validator": "^0.12.2",
+    "class-validator": "^0.14.0",
     "rxjs": "^6.5.5"
   },
   "devDependencies": {
